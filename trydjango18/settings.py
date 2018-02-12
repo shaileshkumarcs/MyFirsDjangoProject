@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'shailesh.kumarcs@gmail.com'
-EMAIL_HOST_PASSWORD = 'XXXXXXXX'
+EMAIL_HOST_PASSWORD = 's9430122379'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
@@ -50,6 +50,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #third party app
+    'crispy_forms',
+    # my app
     'newswsletters',
 )
 
@@ -124,6 +127,6 @@ STATICFILES_DIRS = (
 )
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env","media_root")
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env","media_root")
 
-
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

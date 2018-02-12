@@ -1,0 +1,40 @@
+{% load staticfiles %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>{% block head_title %} NutanTech Technologies Private limited {% endblock %}</title>
+
+    {% include 'head_css.html' %}
+
+  </head>
+
+  <body>
+  {# verbatim #}
+  {% include  'navbar.html' %}
+  {# endverbatim #}
+
+    <main role="main" class="container">
+
+        {% block jumbotron %}
+        <div class="jumbotron">
+            {% block jumbotron_content %}
+
+            {% endblock %}
+        </div>
+
+        {% endblock  %}
+
+      {% block content %}
+
+        {% endblock %}
+    </main>
+
+    {% include 'javascript.html' %}
+  </body>
+</html>

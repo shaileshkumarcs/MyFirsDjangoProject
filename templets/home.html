@@ -1,11 +1,33 @@
-<h1>{{ title }}</h1>
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
 
-{{user}}
+{% block head_title %} Welcome! {{ block.super }}{% endblock %}
 
-{{request.user}}
+{% block jumbotron_content %}
+<h1> Hello there Navbar example</h1>
+<p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+<a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
+{% endblock %}
+
+{% block jumbotron %}
+{{block.super}}
+hiii
+{% endblock %}
+{% block content %}
 
 
-<form method="POST" action=".">{% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="SignUp">
-</form>
+<div class="row">
+    <div class="col-md-3 col-sm-6">
+        <h1>{{ title }}</h1>
+
+        {{user}}
+
+        {{request.user}}
+        <form method="POST" action=".">{% csrf_token %}
+            {{form | crispy}}
+            <input class='btn btn-primary' type="submit" value="SignUp">
+        </form>
+        </div>
+</div>
+
+{% endblock %}
