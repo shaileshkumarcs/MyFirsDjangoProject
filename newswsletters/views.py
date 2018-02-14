@@ -34,7 +34,7 @@ def home(request):
 		contaxt = {
 			"title" : "Thank You"
 		}
-	return render(request, "home.html", contaxt)
+	return render(request, "example_fluid.html", contaxt)
 
 
 
