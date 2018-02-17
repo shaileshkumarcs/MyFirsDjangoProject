@@ -34,11 +34,13 @@ def home(request):
 		contaxt = {
 			"title" : "Thank You"
 		}
-	return render(request, "example_fluid.html", contaxt)
+	return render(request, "home.html", contaxt)
 
 
 
 def contact(request):
+	title = "Contact Us"
+	title_align_center = True
 	form = ContactForm(request.POST or None)
 	if form.is_valid():
 		# for key in form.cleaned_data:
@@ -58,9 +60,11 @@ def contact(request):
                   contact_message,
                   from_email,
                   to_email,
-                  fail_silently=True)
+                  fail_silently=False)
 
         context = {
             "form":form,
+			"title":title,
+			"title_align_center":title_align_center,
         }
 	return render(request, "forms.html",context)

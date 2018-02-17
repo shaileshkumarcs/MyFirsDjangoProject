@@ -28,8 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'shailesh.kumarcs@gmail.com'
-EMAIL_HOST_PASSWORD = 's9430122379'
+EMAIL_HOST_USER = 'shailesh94kumar@gmail.com'
+EMAIL_HOST_PASSWORD = '9939744337'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
@@ -48,10 +48,12 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #third party app
     'crispy_forms',
+    'registration',
     # my app
     'newswsletters',
 )
@@ -129,4 +131,12 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env","media_root")
 
+# Crispy form TAGS settings
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# DJANGO REGISTRATION REDUX SETTING
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'

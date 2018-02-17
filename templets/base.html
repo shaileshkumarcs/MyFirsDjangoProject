@@ -12,6 +12,10 @@
 
     {% include 'head_css.html' %}
 
+      <style>
+        {% block style %}{% endblock %}
+      </style>
+
   </head>
 
   <body>
@@ -19,21 +23,14 @@
   {% include  'navbar.html' %}
   {# endverbatim #}
 
-    <main role="main" class="container-fliud">
+    <div role="main" class="container">
 
         {% block jumbotron %}
-        <div class="jumbotron">
-            {% block jumbotron_content %}
-
-            {% endblock %}
-        </div>
-
         {% endblock  %}
 
-      {% block content %}
-
+        {% block content %}
         {% endblock %}
-    </main>
+    </div>
 
     {% include 'javascript.html' %}
   </body>

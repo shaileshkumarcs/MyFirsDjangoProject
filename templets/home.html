@@ -3,31 +3,51 @@
 
 {% block head_title %} Welcome! {{ block.super }}{% endblock %}
 
-{% block jumbotron_content %}
-<h1> Hello there Navbar example</h1>
-<p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
-<a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
+<style>
+{% block style %}
+
 {% endblock %}
+</style>
 
 {% block jumbotron %}
-{{block.super}}
-hiii
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-xs-6">
+            <h1> Try Django 1.8</h1>
+            <p>The MVP landing project is designed to get your project is started.
+                The goal is to help you lunch as soon as possible with the least
+             amount of investment using time or money. Join us today.</p>
+            <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+        </div>
+        <div class="col-xs-6" style="background-color:black;height:250px;">
+
+        </div>
+    </div>
+</div>
 {% endblock %}
+
+
 {% block content %}
 
 
 <div class="row">
-    <div class="col-md-3 col-sm-6">
-        <h1>{{ title }}</h1>
+    <div class="col-sm-3 pull-right">
+        <p class="lead text-align-center">{{ title }}</p>
 
-        {{user}}
-
-        {{request.user}}
         <form method="POST" action=".">{% csrf_token %}
             {{form | crispy}}
             <input class='btn btn-primary' type="submit" value="SignUp">
         </form>
-        </div>
+    </div>
+    <div class="col-sm-3">
+        <p class="lead text-align-center">Build your django project &amp; Bootstrap</p>
+    </div>
+    <div class="col-sm-3">
+        <p class="lead text-align-center">Created of starters of all kinds</p>
+    </div>
+    <div class="col-sm-3">
+        <p class="lead text-align-center">Always Open source</p>
+    </div>
 </div>
 
 {% endblock %}

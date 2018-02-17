@@ -1,0 +1,10 @@
+Example Text
+
+The MVP landing project is designed to get your project is started. The goal is to help you lunch as soon as possible with the least
+ amount of investment using time or money. Join us today.
+
+ Build your django project & Bootstrap
+
+ Created of starters of all kinds
+
+ Always Open source
